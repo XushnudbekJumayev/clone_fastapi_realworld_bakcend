@@ -5,7 +5,7 @@ from conduit.api.middlewares import RateLimitingMiddleware
 from conduit.api.router import router as api_router
 from conduit.core.config import get_app_settings
 from conduit.core.exceptions import add_exception_handlers
-from conduit.core.logging import configure_logger
+# from conduit.core.logging import configure_logger
 
 
 def create_app() -> FastAPI:
@@ -14,7 +14,7 @@ def create_app() -> FastAPI:
     """
     settings = get_app_settings()
 
-    application = FastAPI(**settings.fastapi_kwargs)
+    application = FastAPI()
 
     application.add_middleware(
         CORSMiddleware,
@@ -29,7 +29,7 @@ def create_app() -> FastAPI:
 
     add_exception_handlers(app=application)
 
-    configure_logger()
+    # configure_logger()
 
     return application
 
