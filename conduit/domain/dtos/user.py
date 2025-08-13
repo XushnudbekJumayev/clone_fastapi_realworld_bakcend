@@ -13,3 +13,16 @@ class UserDTO:
     created_at: datetime.datetime
 
 @dataclass(frozen=True)
+class CreateUserDTO:
+    username: str
+    email: str
+    password: str
+
+@dataclass(frozen=True)
+class CreatedUserDTO:
+    id: int
+    email: str
+    username: str
+    bio: str
+    image: str
+    token: str
