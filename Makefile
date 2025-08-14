@@ -60,7 +60,7 @@ lint:
 	mypy --namespace-packages -p "conduit" --config-file setup.cfg
 
 migration:
-	alembic revision --autogenerate -m "$(message)"
+	docker-compose exec api alembic revision --autogenerate -m "$(message)"
 
 migrate:
-	alembic upgrade head
+	docker-compose exec api alembic upgrade head
