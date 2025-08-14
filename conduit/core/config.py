@@ -14,11 +14,12 @@ enviroment: dict[str, type[AppEnvTypes]] = {
     AppEnvTypes.production: ProdAppSettings,
 }
 
+
 @lru_cache
-def get_app_settings():
+def get_app_settings() -> AppSettings:
     """
     Return application configuration
     """
     app_env = BaseAppSettings().app_env
     config = enviroment[app_env]
-    return config() #type ignore
+    return config()

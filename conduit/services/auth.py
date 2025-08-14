@@ -9,7 +9,6 @@ from conduit.domain.dtos.user import (
 from conduit.domain.services.auth import IUserAuthService
 from conduit.domain.services.auth_token import IAuthTokenService
 from conduit.domain.services.user import IUserService
-from conduit.services.password import verify_password
 
 logger = get_logger()
 
@@ -38,5 +37,3 @@ class UserAuthService(IUserAuthService):
             image=user.image_url,
             token=jwt_token,
         )
-
-    
