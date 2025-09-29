@@ -16,3 +16,6 @@ SQLAlchemy-Utils==0.41.2
 starlette==0.41.2
 structlog==24.4.0
 uvicorn==0.32.0
+
+
+bcrypt==4.2.0 #added for conflict of old package version docker
